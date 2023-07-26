@@ -5,6 +5,12 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>AmazonBestsellers</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
+  body {
+    margin: 0 auto;
+    max-width: 950px;
+  }
+</style>
+<style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7433,12 +7439,6 @@ a.anchor-link {
     display: none;
   }
 </style>
-<style type="text/css">
-  body {
-    max-width: 950px;
-    margin: 0 auto;
-  }
-</style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
@@ -7450,11 +7450,15 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Case-Study:-Trends-from-Amazon-Bestsellers">Case Study: Trends from Amazon Bestsellers<a class="anchor-link" href="#Case-Study:-Trends-from-Amazon-Bestsellers">¶</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h2><p>The following is a case study investigating bestelling books on Amazon between the years 2009 and 2019. We will look at how authors/publishers can use the trends in this data to set long-term goals.</p>
 <h2 id="Contents">Contents<a class="anchor-link" href="#Contents">¶</a></h2><ul>
-<li><a href="#Ask-Phase">Ask Phase</a></li>
-<li><a href="#Prepare-Phase">Prepare Phase</a></li>
-<li><a href="#Process-Phase">Process Phase</a></li>
-<li><a href="#Analyze-Phase">Analyze Phase</a></li>
-<li><a href="#Share/Act-Phase">Share/Act Phase</a></li>
+<li><a href="#Summary">Summary</a><ul>
+<li><a href="#Tools-And-Techniques">Tools and Techniques</a></li>
+<li><a href="#Recommendations">Recommendations</a></li>
+</ul>
+</li>
+<li><a href="#Guiding-Questions">Guiding Questions</a></li>
+<li><a href="#Prepare-Data">Prepare Data</a></li>
+<li><a href="#Process-Data">Process Data</a></li>
+<li><a href="#Analysis">Analysis</a></li>
 <li><a href="#References">References</a></li>
 <li><a href="#Contact">Contact</a></li>
 </ul>
@@ -7468,17 +7472,50 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Ask-Phase">Ask Phase<a class="anchor-link" href="#Ask-Phase">¶</a></h2><p><strong>Goal:</strong> How can trends from the Top 50 Amazon Bestsellers over a 10-year period inform long-term goals for authors and publishers?</p>
-<h3 id="Questions">Questions<a class="anchor-link" href="#Questions">¶</a></h3><p>To address this goal, we will be exploring the following questions:</p>
+<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">¶</a></h2><p>It's no secret that Amazon has become a behemoth of an organization, but it started out by starting selling books. And by the end of the time period for this data set (2019), Amazon enjoys a 50% share of all book distribution and an eBook market share around 67% (<a href="https://justpublishingadvice.com/why-do-amazon-sell-more-ebooks-than-other-retailers/">source</a>). For writers and publishers around the world, it's hard to ignore Amazon's success and it seems unwise to consider not publishing to the platform.</p>
+<p>This case study will investgiate the top 50 bestselling authors and books over the ten year period from 2009-2019. The goal is to provide insights so writers and publishers can make data-informed decisions about long-term goals.</p>
+<h3 id="Guiding-Questions">Guiding Questions<a class="anchor-link" href="#Guiding-Questions">¶</a></h3><p>For this case study, our main guiding question is:</p>
+<p><strong>How can trends from the Top 50 Amazon Bestsellers over a 10-year period inform long-term goals for authors and publishers?</strong></p>
+<p>To address this question, we will be exploring the answering the following sub questions:</p>
 <ul>
 <li>What author(s) published the most between 2009-2019?</li>
 <li>What percentage of books were fiction vs. non-fiction?</li>
 <li>What book appears the most between 2009-2019?</li>
 </ul>
-<h3 id="Metrics">Metrics<a class="anchor-link" href="#Metrics">¶</a></h3><ul>
-<li>User rating</li>
-<li>Number of reviews</li>
-<li>Price</li>
+<h3 id="Tools-and-Techniques">Tools and Techniques<a class="anchor-link" href="#Tools-and-Techniques">¶</a></h3><p>This analysis made use of the following tools and techniques:</p>
+<ul>
+<li>Python programming language and libraries; <code>pandas</code>, <code>seaborn</code>, <code>numpy</code>, and <code>matplotlib</code></li>
+<li>Data transformations: extraction, visualizations, summary statistics</li>
+<li>Data inspection: removal of duplicate/unnessary data, change format/datatype, verify unique values</li>
+</ul>
+<h3 id="Recommendations">Recommendations<a class="anchor-link" href="#Recommendations">¶</a></h3><p>The analysis yielded the following key observations:</p>
+<ul>
+<li>Most authors (75%) only published twice during this 10-year period</li>
+<li>A majority (73%) of the expensive books (books priced greater than 16 USD) were non-fiction</li>
+<li>most books (75%) published during this 10-year period were under 16 USD and 50% of them were priced between 7 USD and 16 USD</li>
+</ul>
+<p>These observations led to the following recommendations outlined below.</p>
+<h4 id="Focus-on-high-quality-content">Focus on high quality content<a class="anchor-link" href="#Focus-on-high-quality-content">¶</a></h4><p>Most authors (75%) only published twice during this 10-year period. It takes a lot to publish a book -- drafting, writing, editing, and revising. This would seem to indicate that for those authors who made it into the Top 50 bestsellers list their book was most likely well-received because it was well-written.</p>
+<p>For writers/publishers, seeking to make it on these lists in the next ten years this means focusing on writing less and writing better. By slowing down to focus on higher quality content it increases your chance of your book being received well and popular.</p>
+<h4 id="For-higher-priced-books,-focus-on-non-fiction">For higher priced books, focus on non-fiction<a class="anchor-link" href="#For-higher-priced-books,-focus-on-non-fiction">¶</a></h4><p>A majority (73%) of the expensive books (books priced greater than 16 USD) were non-fiction. Being that non-fiction books generally require more research and effort to write, it make sense that they would be priced higher to reflect that. For authors/publishers seeking earn more, they might consider shifting their output to non-fiction books. This could be more lucrative if combined with other sources of incomes such speaking engagements, workshops, courses, etc.</p>
+<h4 id="Set-price-between-7-and-16-USD">Set price between 7 and 16 USD<a class="anchor-link" href="#Set-price-between-7-and-16-USD">¶</a></h4><p>This is likely to change due to inflation and increase production costs, but it should be noted that most books (75%) published during this 10-year period were under 16 USD and 50% of them were priced in this range. In other words, when choosing the book price ensure that it is within the current range of book prices -- not too high, but not too low.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Guiding-Questions">Guiding Questions<a class="anchor-link" href="#Guiding-Questions">¶</a></h2><p>For this case study, our main guiding question is:</p>
+<p><strong>How can trends from the Top 50 Amazon Bestsellers over a 10-year period inform long-term goals for authors and publishers?</strong></p>
+<p>To address this question, we will be exploring the answering the following sub questions:</p>
+<ul>
+<li>What author(s) published the most between 2009-2019?</li>
+<li>What percentage of books were fiction vs. non-fiction?</li>
+<li>What book appears the most between 2009-2019?</li>
 </ul>
 </div>
 </div>
@@ -7490,8 +7527,17 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Prepare-Phase">Prepare Phase<a class="anchor-link" href="#Prepare-Phase">¶</a></h2><h3 id="Dataset">Dataset<a class="anchor-link" href="#Dataset">¶</a></h3><p>The data we'll be working with is the <a href="https://www.kaggle.com/datasets/sootersaalu/amazon-top-50-bestselling-books-2009-2019">Amazon Top 50 Bestselling Books 2009 - 2019</a> provided by <a href="https://www.kaggle.com/sootersaalu">Scooter Saalu</a> on Kaggle.</p>
+<h2 id="Prepare-Data">Prepare Data<a class="anchor-link" href="#Prepare-Data">¶</a></h2><h3 id="Dataset">Dataset<a class="anchor-link" href="#Dataset">¶</a></h3><p>The data we'll be working with is the <a href="https://www.kaggle.com/datasets/sootersaalu/amazon-top-50-bestselling-books-2009-2019">Amazon Top 50 Bestselling Books 2009 - 2019</a> provided by <a href="https://www.kaggle.com/sootersaalu">Scooter Saalu</a> on Kaggle.</p>
 <h4 id="Description">Description<a class="anchor-link" href="#Description">¶</a></h4><p>The dataset contains Amazon's Top 50 bestselling books from 2009 to 2019. There are 550 books with the data being categorized into fiction and non-fiction using Goodreads.</p>
+<p>The data contains the following columns:</p>
+<ul>
+<li><strong>Name</strong>: Name of the book (i.e., book title)</li>
+<li><strong>Author</strong>: Name of the person/organization who wrote/published the book</li>
+<li><strong>User rating</strong>: Average user rating on a scale of 1 to 5 in a given year</li>
+<li><strong>Reviews</strong>: The total number of reviews the book received in a given</li>
+<li><strong>Year</strong>: The year the book appeared on the bestseller list</li>
+<li><strong>Price</strong>: The list price of the book in a given year</li>
+</ul>
 <h4 id="License">License<a class="anchor-link" href="#License">¶</a></h4><p>The data is made available to use via the <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0: Public Domain</a> license which allows anyone to "copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission".</p>
 </div>
 </div>
@@ -7503,7 +7549,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Process-Phase">Process Phase<a class="anchor-link" href="#Process-Phase">¶</a></h2><p>Let's import our libraries and start processing our data. We will look for the following abnormalities:</p>
+<h2 id="Process-Data">Process Data<a class="anchor-link" href="#Process-Data">¶</a></h2><p>Let's import our libraries and start processing our data. We will look for the following abnormalities:</p>
 <ul>
 <li>Check for missing values</li>
 <li>Investigate outliers</li>
@@ -8002,7 +8048,7 @@ dtype: object</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Analyze-Phase">Analyze Phase<a class="anchor-link" href="#Analyze-Phase">¶</a></h2>
+<h2 id="Analysis">Analysis<a class="anchor-link" href="#Analysis">¶</a></h2>
 </div>
 </div>
 </div>
@@ -11531,7 +11577,8 @@ The 5 Love Languages: The Secret to Love That Lasts
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Share/Act-Phase">Share/Act Phase<a class="anchor-link" href="#Share/Act-Phase">¶</a></h2><h3 id="Analysis-Conclusions">Analysis Conclusions<a class="anchor-link" href="#Analysis-Conclusions">¶</a></h3><h4 id="Initial-Questions">Initial Questions<a class="anchor-link" href="#Initial-Questions">¶</a></h4><p>Our analysis has yield answers to our intial questions from the Ask Phase:</p>
+<h3 id="Analysis-Conclusions">Analysis Conclusions<a class="anchor-link" href="#Analysis-Conclusions">¶</a></h3><p>After the analysis, it's time to reflect on what was observed in the data. Let's look at our investigative questions and the answers yielded by our analysis.</p>
+<h4 id="Initial-Questions">Initial Questions<a class="anchor-link" href="#Initial-Questions">¶</a></h4><p>Our analysis has yield answers to our intial questions from the Ask Phase:</p>
 <ul>
 <li>What author(s) published the most between 2009-2019?<ul>
 <li>Jeff Kinney is the most common author to appear with his series 'Diarty of a Wimpy Kid'</li>
@@ -11584,23 +11631,9 @@ The 5 Love Languages: The Secret to Love That Lasts
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Key-Recommendations">Key Recommendations<a class="anchor-link" href="#Key-Recommendations">¶</a></h3><p>Returning to our primary goal, how can we use these trends (as authors and publishers) to set long-term goals over 10-year period?</p>
-<h4 id="Focus-on-high-quality-content">Focus on high quality content<a class="anchor-link" href="#Focus-on-high-quality-content">¶</a></h4><p>Most authors (75%) only published twice during this 10-year period. It takes a lot to publish a book -- drafting, writing, editing, and revising. This would seem to indicate that for those authors who made it into the Top 50 bestsellers list their book was most likely well-received because it was well-written.</p>
-<p>For writers/publishers, seeking to make it on these lists in the next ten years this means focusing on writing less and writing better. By slowing down to focus on higher quality content it increases your chance of your book being received well and popular.</p>
-<h4 id="For-higher-priced-books,-focus-on-non-fiction">For higher priced books, focus on non-fiction<a class="anchor-link" href="#For-higher-priced-books,-focus-on-non-fiction">¶</a></h4><p>A majority (73%) of the expensive books (books priced greater than 16 USD) were non-fiction. Being that non-fiction books generally require more research and effort to write, it make sense that they would be priced higher to reflect that. For authors/publishers seeking earn more, they might consider shifting their output to non-fiction books. This could be more lucrative if combined with other sources of incomes such speaking engagements, workshops, courses, etc.</p>
-<h4 id="Set-price-between-7-and-16-USD">Set price between 7 and 16 USD<a class="anchor-link" href="#Set-price-between-7-and-16-USD">¶</a></h4><p>This is likely to change due to inflation and increase production costs, but it should be noted that most books (75%) published during this 10-year period were under 16 USD and 50% of them were priced in this range. In other words, when choosing the book price ensure that it is within the current range of book prices -- not too high, but not too low.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="References">References<a class="anchor-link" href="#References">¶</a></h2><ul>
 <li><a href="https://www.kaggle.com/datasets/sootersaalu/amazon-top-50-bestselling-books-2009-2019?datasetId=918976&amp;sortBy=dateRun&amp;tab=profile">Data Source: Kaggle</a></li>
+<li><a href="https://justpublishingadvice.com/why-do-amazon-sell-more-ebooks-than-other-retailers/">Why Does The Amazon Book Market Share Dominate The Market?</a></li>
 </ul>
 </div>
 </div>
