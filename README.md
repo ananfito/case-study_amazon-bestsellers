@@ -67,7 +67,7 @@ This is likely to change due to inflation and increase production costs, but it 
 The full case study can be viewed at the following places:
 
 - [my portfolio website](https://ananfito.github.io/case-study_amazon-bestsellers/AmazonBestsellers.html)
-- [Kaggle](https://www.kaggle.com/code/anthonynanfito/case-study-trends-from-amazon-bestsellers/notebook). 
+- [Kaggle](https://www.kaggle.com/code/anthonynanfito/case-study-trends-from-amazon-bestsellers/notebook)
 
 ## Contact
 - <a href="mailto:msg.for.anthony.p6ht3@simplelogin.com?subject=Nice Case Study Project&body=Hey Anthony, I saw your Case Study. Let's talk!">Email</a>
