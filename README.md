@@ -44,7 +44,7 @@ The analysis yielded the following key observations:
 
 - Most authors (75%) only published twice during this 10-year period
 - A majority (73%) of the expensive books (books priced greater than 16 USD) were non-fiction
-- most books (75%) published during this 10-year period were under 16 USD and 50% of them were priced between 7 USD and 16 USD
+- Most books (75%) published during this 10-year period were under 16 USD and 50% of them were priced between 7 USD and 16 USD
 
 These observations led to the following recommendations outlined below. 
 
